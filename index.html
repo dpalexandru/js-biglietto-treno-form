@@ -30,9 +30,14 @@
 
       <!-- Età -->
       <div class="col-12 col-md-6 col-lg-4">
-        <label for="eta" class="form-label lead">Età</label>
-        <input type="number" class="form-control" id="eta" placeholder="Inserisci la tua età" >
-      </div>
+
+      <label for="eta" class="form-label lead">Fascia d'età</label>
+      <select class="form-select" id="eta" required>
+        <option value="">Seleziona fascia d'età</option>
+        <option value="minorenne">Minorenne</option>
+        <option value="adulto">Adulto/a</option>
+        <option value="pensionato">Pensionato/a</option>
+      </select>
     </div>
 
     <div class="mt-4 d-flex gap-3 justify-content-center">

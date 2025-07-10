@@ -1,22 +1,19 @@
 //Funzione per calcolare il prezzo del biglietto 
-const calcolaPrezzo = (km,eta) => {
-let prezzoAlKm = 0.21; 
-let scontoMinore = 0.20;
-let scontoPensione =0.40;
-let prezzoViaggio = 0; 
+const calcolaPrezzo = (km, fasciaEta) => {
+  let prezzoAlKm = 0.21;
+  let scontoMinore = 0.20;
+  let scontoPensione = 0.40;
+  let prezzoViaggio = km * prezzoAlKm;
 
-if (eta < 18) {
-  prezzoViaggio = km * prezzoAlKm
-  prezzoViaggio = prezzoViaggio - (prezzoViaggio * scontoMinore)
-} else if (eta >= 65) {
-  prezzoViaggio = km * prezzoAlKm
-  prezzoViaggio = prezzoViaggio - (prezzoViaggio * scontoPensione)
-}
-else{
-  prezzoViaggio = km * prezzoAlKm
-}
-return prezzoViaggio;
-} 
+  if (fasciaEta === "minorenne") {
+    prezzoViaggio -= prezzoViaggio * scontoMinore;
+  } else if (fasciaEta === "pensionato") {
+    prezzoViaggio -= prezzoViaggio * scontoPensione;
+  }
+
+  return prezzoViaggio;
+};
+
 // Creo con numeri casuali posto a sedere e ticket biglietto ogni volta che si aggiorna la pagina
 const numeroPosto = Math.floor(Math.random() * 10) + 1;
 const numeroBiglietto = Math.floor(Math.random() * 900000) + 100000;
@@ -31,10 +28,10 @@ button.addEventListener('click', (e) => {
   e.preventDefault(); //no refresh page
 
   const km = document.getElementById('km').value
-  const eta = document.getElementById('eta').value
-  const nome = document.getElementById('nome').value
- 
-  const price=calcolaPrezzo(km,eta);
+  const nome = document.getElementById('nome').value  
+  const fasciaEta = document.getElementById('eta').value;
+  const price = calcolaPrezzo(km, fasciaEta);
+
   document.getElementById('show-price').innerText = `Prezzo: €${price.toFixed(2)}`;
   document.getElementById('show-name').innerText = nome;
 
@@ -50,11 +47,11 @@ button.addEventListener('click', (e) => {
 
   //stabilisco offerta da stampare sul biglietto
   let offerta = "Prezzo Standard";
-  if (eta<18) {
-    offerta = "Sconto Minori"
-  } else if (eta>=65) {
-    offerta = "Sconto Pensionati"
-  } 
+  if (fasciaEta === "minorenne") {
+    offerta = "Sconto Minori";
+  } else if (fasciaEta === "pensionato") {
+    offerta = "Sconto Pensionati";
+  }
   document.getElementById('ticket-offerta').innerText = offerta;
 
 });
