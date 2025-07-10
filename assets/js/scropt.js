@@ -27,9 +27,12 @@ button.addEventListener('click', (e) => {
 
   const km = document.getElementById('km').value
   const eta = document.getElementById('eta').value
-
+  const nome = document.getElementById('nome').value
+ 
   const price=calcolaPrezzo(km,eta);
   document.getElementById('show-price').innerText = `Prezzo: €${price.toFixed(2)}`;
+  document.getElementById('show-name').innerText = nome;
+
 });
 
 
