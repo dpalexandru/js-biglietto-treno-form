@@ -21,7 +21,7 @@ return prezzoViaggio;
 //Dichiaro e recupero il button
 const button = document.getElementById('button')
 
-// funzione che recupera al click eta e km da percorrere
+// funzione che recupera al click eta, nome  km da percorrere
 button.addEventListener('click', (e) => {
   e.preventDefault(); //no refresh page
 
