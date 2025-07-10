@@ -27,13 +27,19 @@ const button = document.getElementById('button')
 button.addEventListener('click', (e) => {
   e.preventDefault(); //no refresh page
 
+  //controllo che tutti i campi non siano vuoti
+
   const km = document.getElementById('km').value
   const nome = document.getElementById('nome').value  
   const fasciaEta = document.getElementById('eta').value;
+  if (!nome || !km || !fasciaEta) {
+    alert('Compila tutti i campi obbligatori!');
+    return;
+  }
+
   const price = calcolaPrezzo(km, fasciaEta);
 
-  document.getElementById('show-price').innerText = `Prezzo: €${price.toFixed(2)}`;
-  document.getElementById('show-name').innerText = nome;
+  document.getElementById('show-name').innerText = `Benvenuto/a: ${nome}`;
 
   document.getElementById('result-box').classList.remove('d-none');
   

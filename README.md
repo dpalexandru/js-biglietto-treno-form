@@ -21,4 +21,16 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 MILESTONE 3:
 Ora che la logica è funzionante in pagina, possiamo andare a dedicarci allo stile, raffinando la parte di HTML e CSS in modo da renderla esteticamente gradevole.
 
-Numero di push minimo: 7
+### Cosa ho imparato
+
+Ho realizzato un simulatore di biglietto per l’Orient Express usando HTML, CSS, Bootstrap e JavaScript.
+Il prezzo viene calcolato in base ai km e alla fascia d’età selezionata.
+Dopo il click su “Calcola”, viene mostrata un’immagine con nome e prezzo, seguita da una tabella con tutti i dettagli del biglietto.
+Ho generato dinamicamente numero del posto, carrozza e biglietto con numeri casuali.
+Il form è responsive e il footer rimane fisso in basso. Il contenuto del main viene gestito con overflow.
+Ho gestito gli eventi DOM e preso confidenza soprattutto con l'implementazione di nuovi contenuti da js a HTTML.
+Esercizio utile per consolidare DOM, funzioni, condizioni e interazione UI.
+
+### Consegna
+
+10/07/2025
