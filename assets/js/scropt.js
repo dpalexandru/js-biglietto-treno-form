@@ -33,6 +33,8 @@ button.addEventListener('click', (e) => {
   document.getElementById('show-price').innerText = `Prezzo: €${price.toFixed(2)}`;
   document.getElementById('show-name').innerText = nome;
 
+  document.getElementById('result-box').classList.remove('d-none');
+
 });
 
 
