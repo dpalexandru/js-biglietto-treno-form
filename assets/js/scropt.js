@@ -48,6 +48,15 @@ button.addEventListener('click', (e) => {
   document.getElementById('ticket-prezzo').innerText = `€${price.toFixed(2)}`;
   document.getElementById('ticket-posto').innerText = numeroPosto;
 
+  //stabilisco offerta da stampare sul biglietto
+  let offerta = "Prezzo Standard";
+  if (eta<18) {
+    offerta = "Sconto Minori"
+  } else if (eta>=65) {
+    offerta = "Sconto Pensionati"
+  } 
+  document.getElementById('ticket-offerta').innerText = offerta;
+
 });
 
 
