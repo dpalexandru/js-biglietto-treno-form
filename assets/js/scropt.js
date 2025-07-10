@@ -17,9 +17,10 @@ else{
 }
 return prezzoViaggio;
 } 
-// Creo con numeri casuali posto a sedere e ticket biglietto 
+// Creo con numeri casuali posto a sedere e ticket biglietto ogni volta che si aggiorna la pagina
 const numeroPosto = Math.floor(Math.random() * 10) + 1;
 const numeroBiglietto = Math.floor(Math.random() * 900000) + 100000;
+const numeroCarrozza = Math.floor(Math.random() * 5) + 1;
 
 
 //Dichiaro e recupero il button
@@ -42,6 +43,10 @@ button.addEventListener('click', (e) => {
   // innietto dati nella tabella il tuo biglietto
   document.getElementById('ticket-box').classList.remove('d-none');
   document.getElementById('ticket-name').innerText = nome;
+  document.getElementById('ticket-carrozza').innerText = numeroCarrozza;
+  document.getElementById('ticket-numero').innerText = numeroBiglietto;
+  document.getElementById('ticket-prezzo').innerText = `€${price.toFixed(2)}`;
+  document.getElementById('ticket-posto').innerText = numeroPosto;
 
 });
 
