@@ -1,5 +1,4 @@
 //Funzione per calcolare il prezzo del biglietto 
-
 const calcolaPrezzo = (km,eta) => {
 let prezzoAlKm = 0.21; 
 let scontoMinore = 0.20;
@@ -19,12 +18,8 @@ else{
 return prezzoViaggio;
 } 
 
-//test in console log della funzione calcola prezzo 
-console.log(calcolaPrezzo(100,13))
-
 //Dichiaro e recupero il button
 const button = document.getElementById('button')
-
 
 // funzione che recupera al click eta e km da percorrere
 button.addEventListener('click', (e) => {
@@ -33,6 +28,13 @@ button.addEventListener('click', (e) => {
   const km = document.getElementById('km').value
   const eta = document.getElementById('eta').value
 
-  console.log(km, eta)
+  const price=calcolaPrezzo(km,eta);
+  document.getElementById('show-price').innerText = `Prezzo: €${price.toFixed(2)}`;
 });
 
+
+// funzione al click su annulla per refresh pagina 
+const refreshBtn = document.getElementById('refresh');
+refreshBtn.addEventListener('click', () => {
+  location.reload();
+});
