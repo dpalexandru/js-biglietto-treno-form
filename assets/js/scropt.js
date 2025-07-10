@@ -17,6 +17,10 @@ else{
 }
 return prezzoViaggio;
 } 
+// Creo con numeri casuali posto a sedere e ticket biglietto 
+const numeroPosto = Math.floor(Math.random() * 10) + 1;
+const numeroBiglietto = Math.floor(Math.random() * 900000) + 100000;
+
 
 //Dichiaro e recupero il button
 const button = document.getElementById('button')
@@ -34,6 +38,10 @@ button.addEventListener('click', (e) => {
   document.getElementById('show-name').innerText = nome;
 
   document.getElementById('result-box').classList.remove('d-none');
+  
+  // innietto dati nella tabella il tuo biglietto
+  document.getElementById('ticket-box').classList.remove('d-none');
+  document.getElementById('ticket-name').innerText = nome;
 
 });
 
